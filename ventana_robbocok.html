@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" 
+    crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <content class="content">
+        <container class="fixed-bottom cont">
+            <div id="menu" class="menu">
+                    <br>
+                <img class="img" src="https://robbocock.com/img/logo.png">
+                <br>
+                <hr>
+                <br>
+                <div id="items" class="items row">
+                    <div class="item1 col-4">
+                        <div class="seg">
+                            <i class="icon far fa-clock"></i>
+                            <span  class="textitem">
+                                <p>5 sec</p>
+                                <p>10 sec</p>
+                                <p>20 sec</p>
+                                <p>60 sec</p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item2 col-4">
+                        <i class="termmometer fas fa-thermometer-three-quarters"></i>
+                        <span class="row textitem">
+                            <p class="textmed">SLOW</p>
+                            <p class="textmed">SLOW</p>
+                            <p class="textmed">MED</p>
+                            <p class="textmed">HIGH</p>
+                            <p class="textmed">CUM</p>
+                        </span>
+                    </div>
+                    <div class="item3 col-4">
+                        <span id="textitem"  class="textitem">
+                            <i class="icon fas fa-coins"></i>
+                            <a type="Button" class="click" href="#" id="token" onclick="start();"><p>5 tks</p></a>
+                            <a type="Button" class="click" href="#" id="token" class="prueba" onclick="start2();"><p>9 tks</p></a>
+                            <a type="Button" class="click" href="#" id="token" onclick="start3();"><p>19 tks</p></a>
+                            <a type="Button" class="click" href="#" id="token" onclick="start4();"><p>59 tks</p></a>
+                            <a type="Button" class="click" href="#" id="token" onclick="start();"><p>99 tks</p></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="relojs" class="reloj">
+                <input id="CuentaAtras" name="CuentaAtras" type="text" value="" class="circle">
+            </div>
+        </container>
+    </content>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+        body{
+            background-color: blue;
+        }
+      
+        hr{
+            border: 0.1px solid white;
+            display: flex;
+            margin: 0 auto;
+            
+        }
+        p{
+            font-size: 17pt;
+        }
+        .content .cont .menu{
+            width: 27%;
+            background: linear-gradient(#ba5495, #2d1536);
+            
+        }
+
+       .content .cont .menu .img{
+            width:60%;
+            display:flex;
+           margin: 0 auto;
+        }   
+        .content .cont .menu .items{
+            display: flex;
+            margin: 0 auto;
+            opacity: 100%;
+            width: 78%;
+        }
+        .content .cont .menu .items .item1 .seg{
+            text-align: center;
+            color: white;
+            font-family: Secular One;
+        }
+        .content .cont .menu .items .item2 .textitem{
+            text-align: center;
+            color: #fff;
+            font-family: Secular One;
+        }
+        .content .cont .menu .items .item2 .termmometer{
+            display: flex;
+            justify-content: center;
+            font-size: 19pt;
+            color: yellow;
+            
+        }
+        a{
+        
+            text-decoration: none;
+            color: white;
+            font-family: Secular One;
+            
+        }
+         a:hover {
+                color: #2d1536;
+                }
+
+        .content .cont .menu .items .item1 .seg .icon{
+            color: white;
+        }
+        .content .cont .menu .items .item3 .textitem{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content .cont .menu .items .item3 .textitem .icon{
+            color: yellow;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .content .cont .menu .items .item3 .textitem .click{
+            transform: translate(10px, 10px);
+        }
+
+        .content .cont .menu .items .item2 .textitem .icon{
+            color: #fff;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .content .cont .reloj{
+            display: none;
+            justify-content: center;
+            width: 27%;
+            color: white;
+            position: relative;
+            background: linear-gradient(#ba5495, #2d1536);
+            padding: 2rem;
+        }  
+
+  
+
+    </style>
+    <script>
+
+  function startTimer(){
+  var counter = 6;
+  var temp = 1000;
+  var esp1 = 6000;
+  
+
+  setInterval(function() {
+    counter--;
+    if (counter >= 0) {
+  $(document).ready(function(){
+            $(".circle").trigger('configure').knob({
+                "min":0,
+                "max":counter,
+                "width":250,
+                "height":250,
+                "fgColor":"#2d1536",
+                "readOnly":true,
+                "rotation": "anticlockwise",
+                "thickness":".2",
+                "cursor":false,
+                "inputColor":"#fff",
+                "font":"Secular One",
+                "fontWeight":"italic",
+                "bgColor":"#ba5495",
+                
+            })
+        })
+        if(counter >= 0){
+            $('.circle').trigger('configure', {"max":6})
+        }
+
+        $(".circle").val(counter).trigger('change');
+         
+
+        
+    }
+       if (counter >0){
+       document.getElementById('items').style.display = 'none';
+       document.getElementById('relojs').style.display = 'flex';
+     }
+  }, temp)
+
+  setTimeout(function(){ 
+        document.getElementById('relojs').style.display = 'none';
+        document.getElementById('items').style.display = 'flex';
+
+  }, esp1)
+  
+}
+function start()
+{
+   document.getElementById('CuentaAtras');
+   startTimer();
+   
+};
+
+
+
+
+
+function startTimer2(){
+  var counter = 11;
+  var temp = 1000;
+  var esp1 = 11000;
+  setInterval(function() {
+    counter--;
+    if (counter >= 0) {
+  $(document).ready(function(){
+            $(".circle").trigger('configure').knob({
+                "min":0,
+                "max":counter,
+                "width":250,
+                "height":250,
+                "fgColor":"#2d1536",
+                "readOnly":true,
+                "rotation": "anticlockwise",
+                "thickness":".2",
+                "cursor":false,
+                "inputColor":"#fff",
+                "font":"Secular One",
+                "fontWeight":"italic",
+                "bgColor":"#ba5495",
+            })
+            
+        })
+        if(counter >= 0){
+            $('.circle').trigger('configure', {"max":11})
+        }
+
+        $(".circle").val(counter).trigger('change');
+        
+    }
+       if (counter >0){
+       document.getElementById('items').style.display = 'none';
+       document.getElementById('relojs').style.display = 'flex';
+     }
+  }, temp)
+
+  setTimeout(function(){ 
+        document.getElementById('relojs').style.display = 'none';
+        document.getElementById('items').style.display = 'flex';
+
+  }, esp1)
+}
+function start2()
+{
+  document.getElementById('CuentaAtras');
+    startTimer2();
+};
+
+
+
+
+function startTimer3(){
+  var counter = 21;
+  var temp = 1000;
+  var esp1 = 21000;
+  setInterval(function() {
+    counter--;
+    if (counter >= 0) {
+  $(document).ready(function(){
+            $(".circle").trigger('configure').knob({
+                "min":0,
+                "max":counter,
+                "width":250,
+                "height":250,
+                "fgColor":"#2d1536",
+                "readOnly":true,
+                "rotation": "anticlockwise",
+                "thickness":".2",
+                "cursor":false,
+                "inputColor":"#fff",
+                "font":"Secular One",
+                "fontWeight":"italic",
+                "bgColor":"#ba5495",
+            })
+        })
+        if(counter >= 0){
+            $('.circle').trigger('configure', {"max":21})
+        }
+
+        $(".circle").val(counter).trigger('change');
+      
+    }
+       if (counter >0){
+       document.getElementById('items').style.display = 'none';
+       document.getElementById('relojs').style.display = 'flex';
+     }
+  }, temp)
+
+  setTimeout(function(){ 
+        document.getElementById('relojs').style.display = 'none';
+        document.getElementById('items').style.display = 'flex';
+
+  }, esp1)
+}
+function start3()
+{
+    document.getElementById('CuentaAtras');
+    startTimer3();
+};
+
+function startTimer4(){
+  var counter = 61;
+  var temp = 1000;
+  var esp1 = 61000;
+  setInterval(function() {
+    counter--;
+    if (counter >= 0) {
+  $(document).ready(function(){
+            $(".circle").trigger('configure').knob({
+                "min":0,
+                "max":counter,
+                "width":250,
+                "height":250,
+                "fgColor":"#2d1536",
+                "readOnly":true,
+                "rotation": "anticlockwise",
+                "thickness":".2",
+                "cursor":false,
+                "inputColor":"#fff",
+                "font":"Secular One",
+                "fontWeight":"italic",
+                "bgColor":"#ba5495",
+            })
+        })
+        if(counter >= 0){
+            $('.circle').trigger('configure', {"max":61})
+        }
+
+        $(".circle").val(counter).trigger('change');
+
+    }
+       if (counter >0){
+       document.getElementById('items').style.display = 'none';
+       document.getElementById('relojs').style.display = 'flex';
+     }
+  }, temp)
+
+  setTimeout(function(){ 
+        document.getElementById('relojs').style.display = 'none';
+        document.getElementById('items').style.display = 'flex';
+
+  }, esp1)
+}
+function start4()
+{
+    document.getElementById('CuentaAtras');
+    startTimer4();
+};
+    </script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
